@@ -8,20 +8,20 @@ const UserSchema = new Schema(
             type: String,
             required: true,
             lowercase: true,
-            trim=true,
+            trim:true,
             index: true                     //ye hai taki ye database ki searching me aane lag jaye
         },
         email: {
             type: String,
             required: true,
             lowercase: true,
-            trim=true,
+            trim:true,
             unique: true
         },
         fullname: {
             type: String,
             required: true,
-            trim=true,
+            trim:true,
             index: true
         },
         avatar: {
@@ -39,7 +39,7 @@ const UserSchema = new Schema(
         },
         watchHistory: [
             {
-                type: Schema.type.Objectid,
+                type: Schema.Types.ObjectId,
                 ref: "Videos"
             }
         ],

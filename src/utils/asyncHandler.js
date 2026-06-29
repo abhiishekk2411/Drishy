@@ -1,16 +1,14 @@
 export {asyncHandler}
 //below one is the try catch one and we can use any method based on production using it 
-const asyncHandler=(fn)=>async(req,res,next)=>{
+const asyncHandler = (fn) => async (req, res, next) => {
     try {
-        await fn(req,res,next)
-        
+        await fn(req, res, next)
     } catch (error) {
-        res.status(error.code ||500).json({
-            success:false,
-            message:error.message
+        console.log("ERROR CAUGHT:", error)  
+        res.status(error.statusCode || 500).json({
+            success: false,
+            message: error.message
         })
-        
-        
     }
 }
 
